@@ -1,35 +1,35 @@
 {
-  "name": "mediasoup-custom",
-  "version": "1.0.1",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js",
-    "mon": "nodemon src/app.js",
-    "watch": "watchify public/index.js -o public/bundle.js -v",
-    "lint": "npx prettier --write .",
-    "docker-build": "docker build --tag dirvann/mediasoup-video-rooms .",
-    "docker-run": "docker run --name dirvann-mediasoup-rooms -p 10000-10100:10000-10100 -p 3016:3016 dirvann/mediasoup-video-rooms",
-    "docker-start": "docker start dirvann-mediasoup-rooms",
-    "docker-stop": "docker stop dirvann-mediasoup-rooms",
-    "compile-mediasoup-client": "npx browserify mediasoup-client-compile.js -o public/modules/mediasoupclient.min.js"
-  },
-  "author": "Dirk Vanbeveren & Miroslav Pejic",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^5.1.0",
-    "httpolyglot": "^0.1.2",
-    "mediasoup": "^3.11.11",
-    "mediasoup-client": "^3.6.82",
-    "socket.io": "^4.8.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
-    "babel-loader": "^10.0.0",
-    "prettier": "3.6.2",
-    "webpack": "^5.102.1",
-    "webpack-cli": "^6.0.1"
-  }
+    "name": "mediasoup-custom",
+    "version": "1.0.1",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/app.js",
+        "mon": "nodemon src/app.js",
+        "watch": "watchify public/index.js -o public/bundle.js -v",
+        "lint": "npx prettier --write .",
+        "docker-build": "docker build --tag dirvann/mediasoup-video-rooms .",
+        "docker-run": "docker run --name dirvann-mediasoup-rooms -p 10000-10100:10000-10100 -p 3016:3016 dirvann/mediasoup-video-rooms",
+        "docker-start": "docker start dirvann-mediasoup-rooms",
+        "docker-stop": "docker stop dirvann-mediasoup-rooms",
+        "compile-mediasoup-client": "npx browserify mediasoup-client-compile.js -o public/modules/mediasoupclient.min.js"
+    },
+    "author": "Dirk Vanbeveren & Miroslav Pejic",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^5.1.0",
+        "httpolyglot": "^0.1.2",
+        "mediasoup": "^3.11.11",
+        "mediasoup-client": "^3.6.82",
+        "socket.io": "^4.8.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.28.5",
+        "@babel/preset-env": "^7.28.5",
+        "babel-loader": "^10.0.0",
+        "prettier": "3.6.2",
+        "webpack": "^5.102.1",
+        "webpack-cli": "^6.0.1"
+    }
 }

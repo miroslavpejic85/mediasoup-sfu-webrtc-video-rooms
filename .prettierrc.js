@@ -1,15 +1,7 @@
 module.exports = {
-  semi: false,
-  trailingComma: 'none',
-  singleQuote: true,
-  printWidth: 120,
-  tabWidth: 2,
-  overrides: [
-    {
-      files: ['*.html'],
-      options: {
-        tabWidth: 4
-      }
-    }
-  ]
-}
+    semi: true,
+    trailingComma: 'es5', // Trailing commas only where valid in ES5 (objects, arrays, not function arguments)
+    singleQuote: true,
+    printWidth: 120,
+    tabWidth: 4,
+};
