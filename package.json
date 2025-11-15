@@ -13,7 +13,7 @@
         "docker-run": "docker run --name dirvann-mediasoup-rooms -p 10000-10100:10000-10100 -p 3016:3016 dirvann/mediasoup-video-rooms",
         "docker-start": "docker start dirvann-mediasoup-rooms",
         "docker-stop": "docker stop dirvann-mediasoup-rooms",
-        "compile-mediasoup-client": "npx browserify mediasoup-client-compile.js -o public/modules/mediasoupclient.min.js"
+        "compile-mediasoup-client": "npx webpack --config webpack.config.js"
     },
     "author": "Dirk Vanbeveren & Miroslav Pejic",
     "license": "ISC",
