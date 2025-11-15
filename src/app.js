@@ -21,11 +21,11 @@ const io = require('socket.io')(httpsServer)
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 httpsServer.listen(config.listenPort, () => {
-  console.log('Server', { 
+  console.log('Server', {
     listening: 'https://' + 'localhost' + ':' + config.listenPort,
     mediasoup_server: mediasoup.version,
     mediasoup_client: mediasoupClient.version,
-    node_version: process.versions.node,
+    node_version: process.versions.node
   })
 })
 
