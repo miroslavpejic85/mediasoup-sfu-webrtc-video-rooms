@@ -12,7 +12,7 @@ This project is featured on the [mediasoup examples page](https://mediasoup.org/
 
 ## Deployment
 
--   in `config.js` replace the `announcedIP` with your public ip address of the server and modify the port you want to serve it in.
+-   in `config.js` replace the `announcedAddress` with your public ip address of the server and modify the port you want to serve it in.
 
 -   add firewall rules of the port of the webpage (default 3016) and the rtc connections (default udp 10000-10100) for the machine.
 
