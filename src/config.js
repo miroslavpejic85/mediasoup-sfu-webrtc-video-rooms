@@ -65,11 +65,25 @@ module.exports = {
         },
         // WebRtcTransport settings
         webRtcTransport: {
-            listenIps: [
+            listenInfos: [
                 {
+                    protocol: 'udp',
                     ip: '0.0.0.0',
-                    announcedIp: getLocalIp(), // replace by public IP address
+                    announcedAddress: getLocalIp(), // replace with public IP address
+                    portRange: {
+                        min: 10000,
+                        max: 10100,
+                    },
                 },
+                {
+                    protocol: 'tcp',
+                    ip: '0.0.0.0',
+                    announcedAddress: getLocalIp(), // replace with public IP address
+                    portRange: {
+                        min: 10000,
+                        max: 10100,
+                    },
+                }
             ],
             maxIncomingBitrate: 1500000,
             initialAvailableOutgoingBitrate: 1000000,
