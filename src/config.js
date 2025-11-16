@@ -83,7 +83,7 @@ module.exports = {
                         min: 10000,
                         max: 10100,
                     },
-                }
+                },
             ],
             maxIncomingBitrate: 1500000,
             initialAvailableOutgoingBitrate: 1000000,
