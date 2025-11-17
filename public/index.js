@@ -44,7 +44,7 @@ function joinRoom(name, room_id) {
 }
 
 function roomOpen() {
-    login.className = 'hidden';
+    hide(loginContainer);
     reveal(startAudioButton);
     hide(stopAudioButton);
     reveal(startVideoButton);
@@ -54,16 +54,16 @@ function roomOpen() {
     reveal(exitButton);
     reveal(copyButton);
     reveal(devicesButton);
-    control.className = '';
+    reveal(control);
     reveal(videoMedia);
 }
 
 function hide(elem) {
-    elem.className = 'hidden';
+    elem.classList.add('hidden');
 }
 
 function reveal(elem) {
-    elem.className = '';
+    elem.classList.remove('hidden');
 }
 
 function addListeners() {
@@ -100,7 +100,7 @@ function addListeners() {
         hide(videoMedia);
         hide(copyButton);
         hide(devicesButton);
-        reveal(login);
+        reveal(loginContainer);
     });
 }
 

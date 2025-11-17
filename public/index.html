@@ -15,67 +15,109 @@
         <script src="modules/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <div class="container">
-            <div id="login">
-                <br />
-                <i class="fas fa-server"> Room: </i><input id="roomidInput" value="123" type="text" />
-                <!--<button id="createRoom" onclick="createRoom(roomid.value)" label="createRoom">Create Room</button>-->
-                <i class="fas fa-user"> User: </i><input id="nameInput" value="user" type="text" />
-                <button id="joinButton" onclick="joinRoom(nameInput.value, roomidInput.value)">
-                    <i class="fas fa-sign-in-alt"></i> Join
-                </button>
+        <div id="loginContainer" class="d-flex justify-content-center align-items-center vh-100">
+            <div id="login" class="card p-4 shadow-lg bg-light bg-opacity-75 login-card">
+                <h3 class="mb-3 text-center"><i class="fas fa-video"></i> Join a Room</h3>
+                <div class="mb-3">
+                    <label for="roomidInput" class="form-label"><i class="fas fa-server"></i> Room:</label>
+                    <input id="roomidInput" class="form-control" value="123" type="text" />
+                </div>
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label"><i class="fas fa-user"></i> User:</label>
+                    <input id="nameInput" class="form-control" value="user" type="text" />
+                </div>
+                <div class="d-grid gap-2">
+                    <button
+                        id="joinButton"
+                        class="btn btn-primary btn-lg shadow-sm"
+                        onclick="joinRoom(nameInput.value, roomidInput.value)"
+                    >
+                        <i class="fas fa-sign-in-alt"></i> Join
+                    </button>
+                </div>
             </div>
         </div>
 
         <div class="container">
-            <div id="control" class="hidden">
-                <br />
-                <button id="exitButton" class="hidden" onclick="rc.exit()">
-                    <i class="fas fa-arrow-left"></i> Exit
-                </button>
-                <button id="copyButton" class="hidden" onclick="rc.copyURL()">
-                    <i class="far fa-copy"></i> copy URL
-                </button>
-                <button id="devicesButton" class="hidden" onclick="rc.showDevices()">
-                    <i class="fas fa-cogs"></i> Devices
-                </button>
-                <button
-                    id="startAudioButton"
-                    class="hidden"
-                    onclick="rc.produce(RoomClient.mediaType.audio, audioSelect.value)"
-                >
-                    <i class="fas fa-volume-up"></i> Open audio
-                </button>
-                <button id="stopAudioButton" class="hidden" onclick="rc.closeProducer(RoomClient.mediaType.audio)">
-                    <i class="fas fa-volume-up"></i> Close audio
-                </button>
-                <button
-                    id="startVideoButton"
-                    class="hidden"
-                    onclick="rc.produce(RoomClient.mediaType.video, videoSelect.value)"
-                >
-                    <i class="fas fa-camera"></i> Open video
-                </button>
-                <button id="stopVideoButton" class="hidden" onclick="rc.closeProducer(RoomClient.mediaType.video)">
-                    <i class="fas fa-camera"></i> Close video
-                </button>
-                <button id="startScreenButton" class="hidden" onclick="rc.produce(RoomClient.mediaType.screen)">
-                    <i class="fas fa-desktop"></i> Open screen
-                </button>
-                <button id="stopScreenButton" class="hidden" onclick="rc.closeProducer(RoomClient.mediaType.screen)">
-                    <i class="fas fa-desktop"></i> Close screen
-                </button>
-                <br /><br />
-                <div id="devicesList" class="hidden">
-                    <i class="fas fa-microphone"></i> Audio:
+            <div id="control" class="hidden card p-4 shadow-lg bg-light bg-opacity-75 mt-4">
+                <div class="mb-3">
+                    <div class="btn-group mb-2 w-100" role="group">
+                        <button
+                            id="exitButton"
+                            class="btn btn-outline-danger btn-lg shadow-sm hidden"
+                            onclick="rc.exit()"
+                        >
+                            <i class="fas fa-arrow-left"></i> Exit
+                        </button>
+                        <button
+                            id="copyButton"
+                            class="btn btn-outline-secondary btn-lg shadow-sm hidden"
+                            onclick="rc.copyURL()"
+                        >
+                            <i class="far fa-copy"></i> Copy URL
+                        </button>
+                        <button
+                            id="devicesButton"
+                            class="btn btn-outline-primary btn-lg shadow-sm hidden"
+                            onclick="rc.showDevices()"
+                        >
+                            <i class="fas fa-cogs"></i> Devices
+                        </button>
+                    </div>
+                    <div class="btn-group mb-2 w-100" role="group">
+                        <button
+                            id="startAudioButton"
+                            class="btn btn-danger btn-lg shadow-sm hidden"
+                            onclick="rc.produce(RoomClient.mediaType.audio, audioSelect.value)"
+                        >
+                            <i class="fas fa-volume-up"></i> Open audio
+                        </button>
+                        <button
+                            id="stopAudioButton"
+                            class="btn btn-success btn-lg shadow-sm hidden"
+                            onclick="rc.closeProducer(RoomClient.mediaType.audio)"
+                        >
+                            <i class="fas fa-volume-up"></i> Close audio
+                        </button>
+                        <button
+                            id="startVideoButton"
+                            class="btn btn-danger btn-lg shadow-sm hidden"
+                            onclick="rc.produce(RoomClient.mediaType.video, videoSelect.value)"
+                        >
+                            <i class="fas fa-camera"></i> Open video
+                        </button>
+                        <button
+                            id="stopVideoButton"
+                            class="btn btn-success btn-lg shadow-sm hidden"
+                            onclick="rc.closeProducer(RoomClient.mediaType.video)"
+                        >
+                            <i class="fas fa-camera"></i> Close video
+                        </button>
+                        <button
+                            id="startScreenButton"
+                            class="btn btn-danger btn-lg shadow-sm hidden"
+                            onclick="rc.produce(RoomClient.mediaType.screen)"
+                        >
+                            <i class="fas fa-desktop"></i> Open screen
+                        </button>
+                        <button
+                            id="stopScreenButton"
+                            class="btn btn-success btn-lg shadow-sm hidden"
+                            onclick="rc.closeProducer(RoomClient.mediaType.screen)"
+                        >
+                            <i class="fas fa-desktop"></i> Close screen
+                        </button>
+                    </div>
+                </div>
+                <div id="devicesList" class="hidden mt-3 p-3 bg-white rounded shadow-sm">
+                    <div class="mb-2"><i class="fas fa-microphone"></i> <b>Audio:</b></div>
                     <select
                         id="audioSelect"
-                        class="form-select"
+                        class="form-select mb-2"
                         style="width: auto"
                         onchange="rc.closeThenProduce(RoomClient.mediaType.audio, audioSelect.value)"
                     ></select>
-                    <br />
-                    <i class="fas fa-video"></i> Video:
+                    <div class="mb-2"><i class="fas fa-video"></i> <b>Video:</b></div>
                     <select
                         id="videoSelect"
                         class="form-select"
@@ -83,11 +125,10 @@
                         onchange="rc.closeThenProduce(RoomClient.mediaType.video, videoSelect.value)"
                     ></select>
                 </div>
-                <br />
             </div>
         </div>
 
-        <div class="container">
+        <div class="container mt-4">
             <div id="videoMedia" class="hidden">
                 <h4><i class="fab fa-youtube"></i> Local media</h4>
                 <div id="localMedia" class="containers">

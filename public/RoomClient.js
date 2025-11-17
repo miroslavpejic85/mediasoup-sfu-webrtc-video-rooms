@@ -86,8 +86,11 @@ class RoomClient {
                     this.device = device;
                     await this.initTransports(device);
                     this.socket.emit('getProducers');
-                    startVideoButton.click();
-                    startAudioButton.click();
+                    // Automatically start audio and video after 2 seconds
+                    setTimeout(() => {
+                        startVideoButton.click();
+                        startAudioButton.click();
+                    }, 2000);
                 }.bind(this)
             )
             .catch((err) => {
@@ -273,7 +276,7 @@ class RoomClient {
             case mediaType.audio:
                 mediaConstraints = {
                     audio: {
-                        deviceId: deviceId,
+                        deviceId: { exact: deviceId },
                     },
                     video: false,
                 };
@@ -283,15 +286,9 @@ class RoomClient {
                 mediaConstraints = {
                     audio: false,
                     video: {
-                        width: {
-                            min: 640,
-                            ideal: 1920,
-                        },
-                        height: {
-                            min: 400,
-                            ideal: 1080,
-                        },
-                        deviceId: deviceId,
+                        width: { ideal: 1920 },
+                        height: { ideal: 1080 },
+                        deviceId: { exact: deviceId },
                     },
                 };
                 break;

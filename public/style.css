@@ -9,6 +9,16 @@ body {
     background-size: cover;
 }
 
+div.hidden,
+.hidden {
+    display: none !important;
+}
+
+#login {
+    max-width: 400px;
+    width: 100%;
+}
+
 .containers {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -23,12 +33,34 @@ body {
 }
 
 .vid {
-    flex: 0 1 auto;
-    height: 360px;
-    border-radius: 10px;
+    flex: 1 1 320px;
+    min-width: 180px;
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+    border-radius: 12px;
+    background: #222;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
     cursor: pointer;
+    transition: box-shadow 0.2s;
+    display: block;
+}
+.vid:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
-.hidden {
-    display: none;
+@media (max-width: 600px) {
+    .vid {
+        min-width: 120px;
+        aspect-ratio: 16/9;
+    }
+}
+
+@media (min-width: 900px) {
+    .vid {
+        min-width: 240px;
+        max-width: 640px;
+    }
 }
