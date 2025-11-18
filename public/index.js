@@ -6,7 +6,8 @@ let producer = null;
 
 let isEnumerateDevices = false;
 
-nameInput.value = 'user_' + Math.round(Math.random() * 1000);
+roomidInput.value = 'Room_' + Math.floor(100000 + Math.random() * 900000);
+nameInput.value = 'User_' + Math.floor(100000 + Math.random() * 900000);
 
 socket.request = function request(type, data = {}) {
     return new Promise((resolve, reject) => {

@@ -4,27 +4,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">        
+        <link href="modules/bootstrap.min.css" rel="stylesheet" />
 
         <script src="socket.io/socket.io.js"></script>
         <script src="modules/mediasoupclient.min.js"></script>
         <script src="modules/EventEmitter.min.js"></script>
-        <script src="https://kit.fontawesome.com/d2f1016e6f.js" crossorigin="anonymous"></script>
         <script src="RoomClient.js"></script>
-
-        <link href="modules/bootstrap.min.css" rel="stylesheet" />
         <script src="modules/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <div id="loginContainer" class="d-flex justify-content-center align-items-center vh-100">
             <div id="login" class="card p-4 shadow-lg bg-light bg-opacity-75 login-card">
-                <h3 class="mb-3 text-center"><i class="fas fa-video"></i> Join a Room</h3>
+                <h3 class="mb-3 text-center">Join a Room</h3>
                 <div class="mb-3">
-                    <label for="roomidInput" class="form-label"><i class="fas fa-server"></i> Room:</label>
-                    <input id="roomidInput" class="form-control" value="123" type="text" />
+                    <label for="roomidInput" class="form-label">Room:</label>
+                    <input id="roomidInput" class="form-control" value="Room_123456" type="text" />
                 </div>
                 <div class="mb-3">
-                    <label for="nameInput" class="form-label"><i class="fas fa-user"></i> User:</label>
-                    <input id="nameInput" class="form-control" value="user" type="text" />
+                    <label for="nameInput" class="form-label">User:</label>
+                    <input id="nameInput" class="form-control" value="User_123456" type="text" />
                 </div>
                 <div class="d-grid gap-2">
                     <button
